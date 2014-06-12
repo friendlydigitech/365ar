@@ -108,11 +108,11 @@ $(document).ready(function() {
 
 /* ==== 7) Form ==== */
 
-	// $('.flowuplabels').FlowupLabels({
-	//         feature_onInitLoad: false, 
-	//         class_focused:      'focused',
-	//         class_populated:    'populated' 
-	// });
+	$('.flowuplabels').FlowupLabels({
+	        feature_onInitLoad: false, 
+	        class_focused:      'focused',
+	        class_populated:    'populated' 
+	});
 
 	// var options = {
 	// 	target: '.message .alert',
