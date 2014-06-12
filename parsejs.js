@@ -24,7 +24,7 @@ function handleaddorderButtonClick() {
                     'data-dismiss="alert" aria-hidden="true">' + 
                 '&times;' + 
             '</button>' + 
-            'Order has sented!' + 
+            '您的製作資料已送出!<br/ >我們會儘快為您處理！' + 
          '</div>');			    
 	  },
 	  error: function(newOrder, error) {
@@ -46,15 +46,15 @@ $(document).ready(function() {
         },
         fields: {
             serial: {
-                message: 'The serial number is not valid',
+                message: '購買序號不正確！',
                 validators: {
                     notEmpty: {
-                        message: 'The serial number is required and cannot be empty'
+                        message: '購買序號 需要被填寫！'
                     },
                     stringLength: {
                         min: 6,
                         max: 6,
-                        message: 'The serial number must be more than 6 and less than 6 characters long'
+                        message: '購買序號長度是6個英文與數字組合！'
                     },
                     regexp: {
                         regexp: /^[a-zA-Z0-9_]+$/,
@@ -65,17 +65,36 @@ $(document).ready(function() {
             serialhash: {
                 validators: {
                     notEmpty: {
-                        message: 'The email is required and cannot be empty'
+                        message: '驗證碼 資料需要被填寫！'
+                    },
+                    stringLength: {
+                        min: 4,
+                        max: 4,
+                        message: '驗證碼長度是4個英文與數字組合！'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: 'The serial number can only consist of alphabetical, number and underscore'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'Email信箱 資料需要被填寫！'
                     },
                     emailAddress: {
-                        message: 'The input is not a valid email address'
+                        message: '輸入的不是一個正確的 email address！'
                     }
                 }
             },
             albumurl: {
                 validators: {
-                    notEmpty: {
-                        message: 'The album url link is required and cannot be empty'
+                		notEmpty: {
+                        message: 'facebook 相簿網址 資料需要被填寫！'
+                    },
+                    uri: {
+                        message: '輸入的不是一個正確的 facebook 相簿網址！'
                     }
                 }
             }
